@@ -1,0 +1,25 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Quartermaster × lane-promoter
+# Paste this step into .github/workflows/lane-promoter.yml
+# inside jobs.promote.steps — BEFORE the promotion step.
+# ─────────────────────────────────────────────────────────────────────────────
+#
+      - name: Quartermaster — nothing personal rides the lane
+        run: |
+          python3 tools/pii/scan_pii.py --git-diff "origin/master...HEAD"
+#
+# ─────────────────────────────────────────────────────────────────────────────
+# What this buys you:
+#
+# 1. A BLOCK finding fails this step → fails the promote job → the lane
+#    refuses the promotion (your existing contract: loud, both branches
+#    untouched, no force).
+#
+# 2. Synergy with the report-failure job: because promote failed, the
+#    report-failure job fires and OPENS AN ISSUE with the run log link.
+#    The falling tree in the forest now has ears — you and your AI
+#    collaborator both see it via `gh issue list --label lane-refusal`.
+#
+# 3. The refusal message printed in the log names the file, the line,
+#    the rule id, and the fixed explanation — no guessing involved.
+# ─────────────────────────────────────────────────────────────────────────────

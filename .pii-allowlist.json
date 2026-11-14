@@ -1,0 +1,10 @@
+{
+  "_readme": "Every entry must carry a non-empty 'reason' — the gate refuses to start otherwise. Optional 'rule' scopes an entry to one rule id. Exact-value matching only: no patterns, no guessing. This is the TEMPLATE allowlist that ships with the repo — replace the example with your own intentional findings, each with a real reason.",
+  "entries": [
+    {
+      "value": "ops@example.com",
+      "rule": "EMAIL",
+      "reason": "EXAMPLE ENTRY — replace or delete. Pattern: an address you deliberately publish as a public contact."
+    }
+  ]
+}

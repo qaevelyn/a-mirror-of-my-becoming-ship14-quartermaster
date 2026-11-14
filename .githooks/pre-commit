@@ -1,0 +1,13 @@
+#!/bin/sh
+# Quartermaster — runs before every commit in this repo.
+# Refusal is loud, explained, and final. See QUARTERMASTER.md.
+#
+# Enable once per clone:
+#   git config core.hooksPath .githooks
+#
+# Bypass exists (--no-verify) — but on a public repo that is a decision
+# you would have to explain, and the CI gate runs regardless.
+
+root="$(git rev-parse --show-toplevel)" || exit 2
+cd "$root" || exit 2
+exec python3 "$root/tools/pii/scan_pii.py" --staged
