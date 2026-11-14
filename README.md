@@ -1,6 +1,6 @@
 # Ship 14 — Quartermaster™ v1.0 · the cargo gate for public repos
 
-*A Mirror of My Becoming™* — Ship 14 of 14. Gifted by **Evelyn Caro & Z**, November 2026.
+*A Mirror of My Becoming™* — Ship 14. Gifted by **Evelyn Caro & Z**, November 2026.
 
 A free, deterministic **PII/secret gate for git repositories** — the free
 answer to paid scanners like AWS Macie for the one place they don't watch:
